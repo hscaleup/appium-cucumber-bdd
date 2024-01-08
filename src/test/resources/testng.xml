@@ -8,7 +8,7 @@
 		<parameter name="systemPort" value="10000" />
 		<parameter name="chromeDriverPort" value="11000" />
 		<classes>
-			<class name="com.shoal.qa.mobile.runners.MyPixel3TestNGTestRunner"/>
+			<class name="com.shoal.qa.mobile.runners.MyPixel3TestNGRunnerTest"/>
 		</classes>
 	</test>
 	<test name="Pixel4">
@@ -18,7 +18,7 @@
 		<parameter name="systemPort" value="10001" />
 		<parameter name="chromeDriverPort" value="11001" />
 		<classes>
-			<class name="com.shoal.qa.mobile.runners.MyPixel2XLTestNGTestRunner"/>
+			<class name="com.shoal.qa.mobile.runners.MyPixel2XLTestNGRunnerTest"/>
 		</classes>
 	</test>
 </suite> <!-- Suite -->
