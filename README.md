@@ -19,7 +19,6 @@ Technologies/Tools used in building the framework
 - XML - Static text
 - GitHub - Version control
 - Jenkins - CI/CD
--Appium version v1.22.3
 
 Framework implements below best practices
 =========================================
