@@ -65,13 +65,20 @@ public class LoginStepDef {
 
     }
 
-    @And("user seees the option to historical requests")
-    public void userSeesTheOptionToHistoricalRequests(){
+    @Given("that the user is on the Sign in screen")
+    public void thatTheUserIsOnTheSignInScreen(){
+        new LoginPage().launchApp();
+        new LoginPage().pressLoginBtn();
 
     }
 
     @And ("user sees the option to trigger the reconciliation")
     public void userSeesTheOptionToTriggerTheReconciliation(){
 
+    }
+
+    @Then("the user dashboard is displayed")
+    public void theUserDashboardIsDisplayed(){
+        new LoginPage().verifyDashBoard();
     }
 }

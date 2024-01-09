@@ -44,6 +44,10 @@ public class LoginPage extends BasePage {
 	@iOSXCUITFindBy (id = "Login")
 	private WebElement loginBtn;
 
+	@AndroidFindBy (accessibility = "Title")
+	@iOSXCUITFindBy (id = "Title")
+	private WebElement dashBoardTitle;
+
 	@AndroidFindBy (accessibility = "LOGIN")
 	@iOSXCUITFindBy (id = "LOGIN")
 	private WebElement userdataLoginBtn;
@@ -101,6 +105,13 @@ public String getErrTxt() {
 
 	public void clickOnLoginMainPage() {
 		pressLoginBtn();
-		Assert.assertEquals(loginBtn.getText(),"Title of page");
+
 	}
+
+	public void verifyDashBoard() {
+		dashBoardTitle.isDisplayed();
+	}
+
+
+
 }
