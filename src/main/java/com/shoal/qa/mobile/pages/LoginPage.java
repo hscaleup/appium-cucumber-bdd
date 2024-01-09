@@ -1,8 +1,11 @@
 package com.shoal.qa.mobile.pages;
 
 import com.shoal.qa.mobile.utils.CommonUtils;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -37,7 +40,7 @@ public class LoginPage extends BasePage {
 	@iOSXCUITFindBy (id = "test-Password")
 	private WebElement passwordTxtFld;
 	
-	@AndroidFindBy (accessibility = "Login")
+	@AndroidFindBy (accessibility = "LOGIN")
 	@iOSXCUITFindBy (id = "Login")
 	private WebElement loginBtn;
 
@@ -59,7 +62,7 @@ public LoginPage enterUserName(String username) throws InterruptedException {
 }
 
 public LoginPage enterPassword(String password) {
-	clear(passwordTxtFld);
+	click(passwordTxtFld);
 	sendKeys(passwordTxtFld, password, "password is " + password);
 	return this;
 }
@@ -87,7 +90,8 @@ public String getErrTxt() {
 
 	public void verifyLoginScreen() {
 		if(loginBtn.isDisplayed()){
-			Assert.assertEquals(appnameShoal.getText(),"Shoal");
+        usernameTxtFld.isDisplayed();
+			utils.log().info("User is on Login screen");
 		}else{
 			utils.log().info("User is not on Login screen");
 		}

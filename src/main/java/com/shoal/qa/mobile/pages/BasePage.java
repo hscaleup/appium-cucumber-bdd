@@ -21,7 +21,7 @@ import java.time.Duration;
 import java.util.HashMap;
 
 public class BasePage {
-    private final AppiumDriver driver;
+    public final AppiumDriver driver;
     CommonUtils utils = new CommonUtils();
 
     public BasePage(){

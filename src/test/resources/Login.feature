@@ -14,7 +14,7 @@ Feature: Login scenarios
     Then user clicks on Login button after entering data
     Examples:
       | username | password |
-      | abc@gmail.com | test1234 |
+      | sagar.basrom@yopmail.com | Test@1234 |
 
 #  Scenario Outline: Verification of Admin Dashboard
 #    Given that user is on the Dashboard
