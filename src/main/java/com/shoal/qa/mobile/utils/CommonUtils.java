@@ -2,6 +2,8 @@ package com.shoal.qa.mobile.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -14,6 +16,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+
+import static com.shoal.qa.mobile.manager.DriverManager.driver;
 
 public class CommonUtils {
 	public static final long WAIT = 10;
@@ -58,5 +63,16 @@ public class CommonUtils {
 	public Logger log() {
 		return LogManager.getLogger(Thread.currentThread().getStackTrace()[2].getClassName());
 	}
-	
+
+	public List<WebElement> getListOfElements(String elements, String value){
+		List<WebElement> textFieldsList = driver.get().findElements(By.id(elements));
+		for(int i=0;i<textFieldsList.size();i++){
+		if(value.equalsIgnoreCase(textFieldsList.get(i).toString())){
+               textFieldsList.get(i).click();
+		}else {
+			log().info("User was unable to fetch the data list");
+		}
+		}
+		return textFieldsList;
+	}
 }

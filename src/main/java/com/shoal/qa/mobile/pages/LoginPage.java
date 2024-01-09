@@ -68,12 +68,9 @@ public LoginPage enterPassword(String password) {
 }
 
 public ProductsPage pressLoginBtn() {
-	click(loginBtn, "press login button");
-    try {
-        Thread.sleep(2000);
-    } catch (InterruptedException e) {
-        throw new RuntimeException(e);
-    }
+		click(loginBtn, "press login button");
+
+
     return new ProductsPage();
 }
 
@@ -103,7 +100,7 @@ public String getErrTxt() {
 	}
 
 	public void clickOnLoginMainPage() {
-		click(userdataLoginBtn, "User is has clicked on login button after entering details");
+		pressLoginBtn();
 		Assert.assertEquals(loginBtn.getText(),"Title of page");
 	}
 }

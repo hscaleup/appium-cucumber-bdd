@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
-    private static final ThreadLocal<AppiumDriver> driver = new ThreadLocal<>();
+    public static final ThreadLocal<AppiumDriver> driver = new ThreadLocal<>();
     CommonUtils utils = new CommonUtils();
 
     public AppiumDriver getDriver(){
